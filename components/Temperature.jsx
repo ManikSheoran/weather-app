@@ -40,7 +40,7 @@ export default function Temperature({ data }) {
           onClick={() => setUnit(unit === "celsius" ? "fahrenheit" : "celsius")}
         >
           <FontAwesomeIcon
-            icon={unit === "celsius" ? faToggleOn : faToggleOff}
+            icon={unit === "celsius" ? faToggleOff : faToggleOn}
             style={{ marginLeft: "8px", color: "#fa4032" }}
           />
         </span>
