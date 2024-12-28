@@ -26,7 +26,9 @@ A simple weather app built with React that allows users to view the current weat
 
 ## Screenshots
 
-![Weather App Screenshot](screenshots/screenshot1.png)
+![Weather App Home](screenshots/s1.png)
+![Celsius Temperature](screenshots/s2.png)
+![Fahrenheit Temperature](screenshots/s3.png)
 
 ## License
 
