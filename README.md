@@ -5,6 +5,6 @@ A simple weather app built with **React** and **Vite**. This app allows users to
 ## Features
 - View real-time weather data.
 - Fast development with **Vite**.
-- Built with **React** and **Babel** or **SWC** for fast refresh.
+- Built with **React**.
 
 
