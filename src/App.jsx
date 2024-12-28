@@ -2,7 +2,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSun } from "@fortawesome/free-solid-svg-icons";
 import "./App.css";
 import CityForm from "../components/CityForm";
-import Temperature from "../components/Temperature";
 
 function App() {
   return (
@@ -13,7 +12,7 @@ function App() {
           spin
           style={{ color: "#fab12f", fontSize: "50px" }}
         />
-        <h1>Weather App</h1>
+        <h1 className="title">Weather App</h1>
         <CityForm />
       </div>
     </>

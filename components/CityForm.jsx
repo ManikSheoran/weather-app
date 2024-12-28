@@ -1,4 +1,4 @@
-import * as React from "react"; 
+import * as React from "react";
 import { useForm } from "react-hook-form";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
@@ -6,7 +6,7 @@ import Temperature from "./Temperature";
 
 const API_URL = `https://api.openweathermap.org/data/2.5/weather`;
 
-export default function CityForm({ onSearch }) {
+export default function CityForm() {
   const {
     register,
     handleSubmit,
@@ -19,22 +19,20 @@ export default function CityForm({ onSearch }) {
     const city = data.city;
     try {
       const response = await fetch(
-        `${API_URL}?q=${city}&appid=${import.meta.env.VITE_WEATHER_API}`
+        `${API_URL}?q=${city}&units=metric&appid=${
+          import.meta.env.VITE_WEATHER_API
+        }`
       );
 
       if (!response.ok) {
-        throw new Error("City not found or API error");
+        throw new Error("City not found, Please enter a valid city name.");
       }
 
       const weatherData = await response.json();
-
       setWeatherData(weatherData);
-
-      onSearch(weatherData);
     } catch (error) {
       console.error("Error fetching weather data:", error);
-      setWeatherData({ error: error.message }); 
-      onSearch({ error: error.message });
+      setWeatherData({ error: error.message });
     }
   };
 
@@ -63,7 +61,7 @@ export default function CityForm({ onSearch }) {
           <div className="invalid-feedback d-block">{errors.city.message}</div>
         )}
       </form>
-      {weatherData && <Temperature response={weatherData} />}{" "}
+      {weatherData && <Temperature data={weatherData} />}
     </>
   );
 }

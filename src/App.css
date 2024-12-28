@@ -14,6 +14,10 @@ body {
   text-align: center;
 }
 
+.title {
+  padding: 40px 0;
+}
+
 h1 {
   font-family: "Climate Crisis", serif;
   font-optical-sizing: auto;
@@ -23,33 +27,37 @@ h1 {
   font-size: 3rem;
 }
 
+form {
+  padding: 20px;
+}
+
 .form-control {
   background-color: transparent;
-  border: #FAB12F 2px solid;
+  border: #fab12f 2px solid;
 }
 
 .form-control:focus {
   background-color: transparent;
-  border: #FAB12F 2px solid;
+  border: #fab12f 2px solid;
   box-shadow: 0 0 0 0.2rem rgba(250, 129, 47, 0.25);
 }
 
 label {
-  color: #FAB12F;
+  color: #fab12f;
 }
 
 .form-floating > .form-control:focus ~ label {
-  color: #FAB12F;
+  color: #fab12f;
 }
 
-.form-floating>.form-control:not(:placeholder-shown)~label::after,
+.form-floating > .form-control:not(:placeholder-shown) ~ label::after,
 .form-floating > .form-control:focus ~ label::after {
   background-color: transparent;
-  color: #FAB12F; 
+  color: #fab12f;
 }
 
 .btn-transparent {
-  background-color: #FAB12F;
+  background-color: #fab12f;
   border: none;
   border-radius: 5px;
   padding: 10px 20px;
@@ -61,6 +69,13 @@ label {
 }
 
 .btn-transparent:focus {
-  border: #FAB12F 2px solid;
+  border: #fab12f 2px solid;
   box-shadow: 0 0 0 0.2rem rgba(250, 129, 47, 0.25);
+}
+
+.error-message {
+  font-family: "Poppins", sans-serif;
+  color: #fa4032;
+  padding: auto;
+  font-size: 1rem;
 }
