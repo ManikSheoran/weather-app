@@ -40,21 +40,14 @@ const SunriseSunset = ({ sunrise, sunset }) => {
     24,
   ];
 
-  const dayNightData = hours.map((hour) => {
-    if (hour > sunriseHour && hour < sunsetHour) {
-      return 1;
-    } else if (hour === sunriseHour || hour === sunsetHour) {
-      return 0;
-    } else {
-      return -1;
-    }
-  });
+  const higher = Math.max(sunriseHour, sunsetHour);
+  const lower = Math.min(sunriseHour, sunsetHour);
 
   const graphColor = "rgba(250, 64, 50, 0.8)";
   const sunriseSunsetColor = "#fab12f";
 
   const unifiedData = hours.map((hour) =>
-    hour > sunriseHour && hour < sunsetHour
+    hour > lower && hour < higher
       ? 0.5
       : hour === sunriseHour || hour === sunsetHour
       ? 0
@@ -127,49 +120,6 @@ const SunriseSunset = ({ sunrise, sunset }) => {
             label: {
               display: false,
             },
-          },
-
-          {
-            type: "box",
-            xMin: sunriseHour,
-            xMax: sunsetHour,
-            backgroundColor: "rgba(255, 255, 0, 0.2)",
-            borderColor: "#fab12f",
-            borderWidth: 1,
-            label: {
-              content: "Day",
-              position: "center",
-              font: {
-                size: 16,
-                weight: "bold",
-              },
-              backgroundColor: "#fab12f",
-              color: "black",
-            },
-          },
-          {
-            type: "label",
-            xValue: sunriseHour,
-            yValue: 0,
-            backgroundColor: "#fab12f",
-            borderRadius: 10,
-            content: `Sunrise: ${sunrise}`,
-            font: {
-              size: 12,
-            },
-            color: "black",
-          },
-          {
-            type: "label",
-            xValue: sunsetHour,
-            yValue: 0,
-            backgroundColor: "orange",
-            borderRadius: 10,
-            content: `Sunset: ${sunset}`,
-            font: {
-              size: 12,
-            },
-            color: "black",
           },
         ],
       },
