@@ -6,14 +6,22 @@ import CityForm from "../components/CityForm";
 function App() {
   return (
     <>
-      <div className="center">
-        <FontAwesomeIcon
-          icon={faSun}
-          spin
-          style={{ color: "#fab12f", fontSize: "50px" }}
-        />
-        <h1 className="title">Weather App</h1>
-        <CityForm />
+      <div
+        className="d-flex justify-content-center align-items-center"
+        style={{ minHeight: "100vh" }}
+      >
+        <div
+          className="text-center main-div"
+          style={{ width: "100%", maxWidth: "500px" }}
+        >
+          <FontAwesomeIcon
+            icon={faSun}
+            spin
+            style={{ color: "#fab12f", fontSize: "50px" }}
+          />
+          <h1 className="title my-4">Weather App</h1>
+          <CityForm />
+        </div>
       </div>
     </>
   );
