@@ -57,8 +57,14 @@ const SunriseSunset = ({ sunrise, sunset }) => {
   const currentTime = new Date();
   const currentHour = currentTime.getHours() + currentTime.getMinutes() / 60;
 
+  const labels = hours.map((hour) => {
+    if (hour === sunriseHour) return `Sunrise (${sunrise})`;
+    if (hour === sunsetHour) return `Sunset (${sunset})`;
+    return `${Math.floor(hour)}:00`;
+  });
+
   const data = {
-    labels: hours.map((h) => sunrise),
+    labels,
     datasets: [
       {
         label: "Sunlight & Night",
