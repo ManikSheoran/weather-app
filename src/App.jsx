@@ -22,6 +22,7 @@ function App() {
           <h1 className="title my-4">Weather App</h1>
           <CityForm />
         </div>
+        {/* HAPPY NEW YEAR 2025 */}
       </div>
     </>
   );
